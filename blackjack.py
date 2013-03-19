@@ -68,7 +68,7 @@ while dtotal < 17 :
 	dtotal = sum (dealerCards)
 
 answer = raw_input ("Do you want a hit? ")
-while answer == "Y" or answer == "y" :
+while answer[0] in ["Y", "y"] :
 
 	newCard = cardAssignment [random.randint(2, 14)]
 	playerCards.append (newCard)
@@ -96,6 +96,6 @@ if  (dtotal < best <= 21) or (best <= 21 and dtotal > 21) :
 elif dtotal > 21 and best > 21:
 	print "Your total is {total}. The dealer's total is {dtotal}. You both lose!".format(total= best, dtotal= dtotal)
 elif dtotal == best and best < 21:
-	print "It's a tie!"	
+	print "It's a tie! You both scored {total}".format(total= best)	
 else :
 	print "Your total is {total}. The dealer's total is {dtotal}. You lose, whore.".format(total= best, dtotal= dtotal)
